@@ -4,16 +4,19 @@
 
 ### Beauty Treatment Booking & Management System
 
-A web-based information system designed to support beauty treatment booking, scheduling, simulated payments, promotions, loyalty points, reviews, and administrative management.
+A web-based beauty treatment booking and management system developed with Laravel to support treatment discovery, online booking, simulated payments, promotions, membership, loyalty points, reviews, and administrative management.
 
 **Academic Project — Web Programming**
 
 <br>
 
-![Laravel](https://img.shields.io/badge/Laravel-10-FF2D20?style=flat&logo=laravel&logoColor=white)
+![Laravel](https://img.shields.io/badge/Laravel-10.10+-FF2D20?style=flat&logo=laravel&logoColor=white)
 ![PHP](https://img.shields.io/badge/PHP-8.1+-777BB4?style=flat&logo=php&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-Database-4479A1?style=flat&logo=mysql&logoColor=white)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-5-7952B3?style=flat&logo=bootstrap&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?style=flat&logo=bootstrap&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=flat&logo=vite&logoColor=white)
+
+[Live Website](https://lumierebeauty.web.id) | [Repository](https://github.com/anggitasilmyy/lumiere-beauty)
 
 </div>
 
@@ -21,243 +24,400 @@ A web-based information system designed to support beauty treatment booking, sch
 
 ## Overview
 
-**Lumiere Beauty** is a web-based beauty treatment booking and management system developed as an academic project for the **Web Programming** course.
+**Lumiere Beauty** is a web-based information system developed as an academic project for the **Web Programming** course.
 
-The system provides a centralized platform where customers can explore available beauty treatments and promotions, schedule treatments, complete a simulated payment process, monitor their bookings, collect loyalty points, and submit reviews.
+The system was designed to digitalize the beauty treatment reservation process by providing a centralized platform where customers can explore treatments and promotions, create bookings, select schedules, complete a simulated payment process, monitor booking status, collect loyalty points, and submit reviews.
 
-An administrative interface is also provided to manage treatments, promotions, customer bookings, payment statuses, and treatment progress.
+An administrative interface is also available for managing treatments, customer bookings, payment verification, treatment status, and promotions.
+
+The project demonstrates the implementation of a complete Laravel-based information system that connects customer-facing features, administrative functionality, relational database management, and web deployment.
 
 ---
 
 ## Problem Background
 
-Beauty service businesses require an organized process for managing treatment information, reservations, schedules, promotions, payments, and customer records.
+Beauty service businesses require an organized process for managing treatment information, customer reservations, schedules, promotions, payments, and service records.
 
-When these activities are handled separately or manually, customers may experience difficulties in checking available services, arranging treatment schedules, and tracking their reservations.
+When these activities are handled separately or manually, customers may experience difficulties in:
 
-**Lumiere Beauty** was designed to demonstrate how a web-based information system can integrate these activities into a more structured and centralized digital workflow.
+- Finding available treatment information.
+- Choosing appropriate treatment services.
+- Arranging treatment schedules.
+- Monitoring reservation and payment status.
+- Accessing promotion and membership information.
+- Reviewing previous bookings.
+
+Lumiere Beauty was developed to demonstrate how a web-based information system can organize these activities into a more structured and integrated digital workflow.
 
 ---
 
 ## Project Objectives
 
-The project aims to:
+The main objectives of this project are to:
 
-- Provide easy access to beauty treatment and promotion information.
-- Support an integrated treatment booking and scheduling process.
+- Provide accessible treatment and promotion information.
+- Support an integrated treatment booking process.
+- Allow customers to select treatment schedules and payment methods.
 - Centralize booking and simulated payment information.
 - Allow customers to monitor booking history and payment status.
-- Implement a loyalty points and membership mechanism.
-- Allow customers to provide reviews after completing treatments.
-- Provide administrators with tools to manage treatments, promotions, and bookings.
-- Apply Laravel-based web development and relational database concepts in a complete information system.
+- Implement membership and loyalty point features.
+- Provide post-treatment review functionality.
+- Provide administrative tools for managing treatments, bookings, payments, and promotions.
+- Apply Laravel MVC, relational database, frontend development, and deployment concepts in a complete web application.
 
 ---
 
 ## My Contribution
 
-My primary responsibility in this project was the **Home Page and visual integration across the application**.
+My primary responsibilities in this project were **Home Page development, interface integration, and hosting & deployment**.
 
-I worked on integrating the main public-facing interface with other system modules so that the homepage served not only as an introduction to Lumiere Beauty, but also as a navigation and information hub for treatments, promotions, membership, authentication states, and other customer features.
+The main focus of my contribution was ensuring that the homepage functioned not only as an informational landing page, but also as an integration point between treatments, promotions, membership information, authentication states, navigation, and other system modules.
 
-### Main Responsibilities
+### Home Page Development
 
-- Developed and refined the main **Home Page** interface.
-- Integrated featured treatment data from the database into the homepage.
-- Integrated active promotion data into the homepage.
-- Adjusted navigation based on authentication and user roles.
-- Integrated reusable layout components such as the navbar and footer.
-- Maintained visual consistency across pages through shared styling.
-- Implemented and adjusted responsive navigation for desktop and mobile layouts.
-- Integrated Bootstrap, custom CSS, JavaScript, and Vite assets into the main layout.
-- Contributed to overall interface integration between public, customer, and administrative features.
+I worked on the main customer-facing homepage, including:
 
-### Main Files
+- Hero section and primary call-to-action elements.
+- Treatment highlights.
+- Promotion highlights.
+- Membership information.
+- Quick information sections.
+- Homepage statistics display.
+- Navigation to other system modules.
+- Responsive page composition.
+
+The homepage combines static presentation content with dynamic treatment and promotion data retrieved from the database.
+
+### Dynamic Data Integration
+
+The homepage integrates data through `HomeController`.
+
+The controller retrieves:
+
+- Up to **6 active and featured treatments**.
+- Up to **3 active promotions** that are currently within their valid period.
+
+These records are then passed to the Blade homepage and rendered dynamically.
+
+### Interface Integration
+
+I also worked on integrating reusable visual components across the application, including:
 
 ```text
-app/Http/Controllers/HomeController.php
-resources/views/home.blade.php
 resources/views/layouts/app.blade.php
 resources/views/partials/navbar.blade.php
 resources/views/partials/footer.blade.php
 public/assets/css/styles.css
 public/assets/js/script.js
+```
+
+This integration includes:
+
+- Shared application layout.
+- Responsive navigation.
+- Authentication-aware navigation states.
+- Customer and administrator navigation integration.
+- Reusable navbar and footer.
+- Bootstrap integration.
+- Custom styling.
+- Custom JavaScript interactions.
+- Vite asset integration.
+
+### Frontend Interaction
+
+Custom JavaScript supports several interface interactions, including:
+
+- Hero slider.
+- Mobile hamburger navigation.
+- Active navigation state.
+- Counter animation.
+- Reveal animation.
+- Other homepage interactions.
+
+### Hosting & Deployment
+
+I was also responsible for the hosting and deployment process of Lumiere Beauty.
+
+The deployment work included:
+
+- Preparing the Laravel project for production hosting.
+- Managing deployment through cPanel and DomaiNesia.
+- Configuring the production database.
+- Managing the Laravel project and `public_html` structure.
+- Preparing production environment configuration.
+- Building frontend assets using Vite.
+- Configuring the application domain.
+- Managing DNS configuration.
+- Activating SSL/HTTPS.
+- Verifying that production assets, routes, and database connections worked correctly.
+
+The deployed application is available at:
+
+**https://lumierebeauty.web.id**
+
+### Main Files Related to My Contribution
+
+```text
+app/Http/Controllers/HomeController.php
+
+resources/views/home.blade.php
+resources/views/layouts/app.blade.php
+resources/views/partials/navbar.blade.php
+resources/views/partials/footer.blade.php
+
+public/assets/css/styles.css
+public/assets/js/script.js
+
+resources/css/app.css
+resources/js/app.js
+
+vite.config.js
+```
+
+---
 
 ## User Roles
 
+The system consists of three main user roles.
+
+### Guest
+
+Guests can:
+
+- Access the homepage.
+- Browse treatments.
+- View promotions.
+- View membership information.
+- Access clinic information.
+- Register for a customer account.
+- Log in to an existing account.
+
+Guests cannot create bookings or access customer and administrator data.
+
 ### Customer
 
-Customers can:
+Authenticated customers can:
 
-- Register and log in to the system.
-- Browse available beauty treatments.
-- View active promotions.
-- Select a treatment and preferred schedule.
-- Choose a simulated payment method.
-- Submit payment information.
-- Monitor booking and payment status.
-- View booking history.
-- Access payment receipts.
-- Monitor loyalty points and membership information.
-- Manage profile information.
-- Submit reviews after treatment completion.
+- Browse treatments.
+- Search and filter treatments.
+- Select a treatment.
+- Choose booking date and time.
+- Select a payment method.
+- Complete the simulated payment process.
+- View personal booking history.
+- Monitor payment and booking status.
+- Access payment receipts for eligible bookings.
+- View loyalty points.
+- View membership information.
+- Access profile information.
+- Submit a review after treatment completion.
 
 ### Administrator
 
 Administrators can:
 
 - Access the administrative dashboard.
-- Create, update, and manage treatment information.
+- Manage treatments.
 - Activate or deactivate treatments.
-- Manage promotional programs.
-- Monitor customer bookings.
-- Search and filter booking information.
-- Verify and update payment status.
+- Manage customer bookings.
+- Search and filter booking records.
+- Verify simulated payments.
+- Update payment status.
 - Update booking status.
-- Update treatment progress.
+- Update treatment status.
+- Manage promotions.
 
 ---
 
 ## Core Business Flow
 
-The main workflow connects the customer booking process with administrative verification and subsequent customer services.
+The main business process connects the customer booking journey with administrative payment verification and post-transaction customer services.
 
-```text
-Guest / Customer
-       │
-       ▼
-Browse Treatments & Promotions
-       │
-       ▼
-Register / Login
-       │
-       ▼
-Select Treatment
-       │
-       ▼
-Choose Date, Time & Payment Method
-       │
-       ▼
-Payment Simulation
-       │
-       ▼
-Booking Created
-waiting_verification
-       │
-       ▼
-Admin Verifies Payment
-       │
-       ├──────── Payment Failed / Refunded
-       │                  │
-       │                  ▼
-       │           Booking Cancelled
-       │
-       ▼
-Payment Paid
-       │
-       ▼
-Booking Confirmed
-       │
-       ▼
-Treatment Scheduled
-       │
-       ▼
-Loyalty Points Awarded
-       │
-       ▼
-My Bookings / Receipt / My Points
-       │
-       ▼
-Treatment Completed
-       │
-       ▼
-Customer Review
+```mermaid
+flowchart TD
+    A["Browse Treatments and Promotions"] --> B{"Authenticated?"}
+
+    B -- "No" --> C["Register or Login"]
+    B -- "Yes" --> D["Select Treatment"]
+    C --> D
+
+    D --> E["Choose Booking Date, Time, and Payment Method"]
+    E --> F["Checkout and Payment Instructions"]
+    F --> G["Submit Simulated Payment Confirmation"]
+
+    G --> H["Booking Created: Pending"]
+    H --> I["Payment Status: Waiting Verification"]
+
+    I --> J["Admin Reviews Payment"]
+    J --> K{"Payment Status"}
+
+    K -- "Paid" --> L["Booking Confirmed"]
+    L --> M["Treatment Scheduled"]
+    M --> N["Loyalty Points Awarded"]
+    N --> O["View My Bookings, Receipt, and Points"]
+    O --> P["Treatment Completed"]
+    P --> Q["Customer Can Submit Review"]
+
+    K -- "Failed or Refunded" --> R["Booking and Treatment Cancelled"]
 ```
 
-The administrator supports this workflow by managing treatments and promotions, monitoring bookings, verifying simulated payments, and updating booking and treatment statuses.
+### Flow Explanation
+
+1. A user begins by exploring available treatments and promotions.
+2. Authentication is required before creating a booking.
+3. The customer selects a treatment, booking date, booking time, and payment method.
+4. The checkout process temporarily stores the booking information before confirmation.
+5. After simulated payment confirmation is submitted, the system creates the booking and payment records.
+6. The booking begins with a `pending` status and the payment enters `waiting_verification`.
+7. An administrator reviews the payment information.
+8. When the payment is changed to `paid`, the booking is automatically confirmed.
+9. The treatment status is automatically changed from `not_started` to `scheduled`.
+10. Loyalty points are awarded to the customer.
+11. The customer can access booking information, receipt, and loyalty point history.
+12. After the treatment status becomes `completed`, the customer can submit a review.
+13. If payment is marked as `failed` or `refunded`, the booking and treatment are cancelled.
 
 ---
 
 ## Key Features
 
-| Feature | Customer | Administrator |
-|---|:---:|:---:|
-| User Registration & Login | ✅ | ✅ |
-| Browse Treatments | ✅ | ✅ |
-| View Promotions | ✅ | ✅ |
-| Treatment Booking | ✅ | — |
-| Schedule Selection | ✅ | — |
-| Simulated Payment | ✅ | — |
-| Booking History | ✅ | — |
-| Payment Receipt | ✅ | — |
-| Loyalty Points | ✅ | — |
-| Membership Information | ✅ | — |
-| Customer Reviews | ✅ | — |
-| Treatment Management | — | ✅ |
-| Promotion Management | — | ✅ |
-| Booking Management | — | ✅ |
-| Payment Verification | — | ✅ |
-| Treatment Status Management | — | ✅ |
+### Authentication and Role-Based Access
 
----
+The application supports:
 
-## Simulated Payment
+- Customer registration.
+- Customer and administrator login.
+- Logout.
+- Guest middleware.
+- Authentication middleware.
+- Administrator middleware.
+- Role-based navigation and route protection.
 
-Lumiere Beauty includes a **simulated payment workflow** to demonstrate the booking and payment process.
-
-Supported payment options include:
-
-- QRIS
-- Bank Transfer
-- E-Wallet
-- Cash
-
-The system stores booking and payment information and allows administrators to update the payment status during the verification process.
-
-> **Disclaimer:** All payment information used in this project is dummy data. No real payment gateway or real financial transaction is implemented.
-
----
-
-## Promotion & Loyalty System
-
-The system supports promotional discounts and customer loyalty features.
+### Treatment Catalogue
 
 Customers can:
 
-- View available promotions.
-- Apply eligible promotional codes during booking.
-- Receive loyalty points after payment is successfully verified.
-- Monitor point transaction history.
-- View their current membership information.
+- Browse active treatments.
+- Search available treatments.
+- Filter treatments by category.
+- View treatment information.
+- Select a treatment for booking.
 
----
+Administrators can manage treatment information through the administrative interface.
 
-## Review System
+### Treatment Booking
 
-Authenticated customers can submit ratings and comments for supported services.
+Authenticated customers can:
 
-For booking-related reviews, the system verifies that:
+- Select a treatment.
+- Choose a booking date.
+- Choose a booking time.
+- Select a payment method.
+- Add optional notes.
+- Continue to payment instructions.
 
-- The booking belongs to the currently authenticated customer.
-- The treatment has already been completed.
+The temporary checkout process uses session data before the booking is permanently created.
 
-Ratings are limited to a scale of **1–5**.
+### Simulated Payment
 
----
+The system includes a simulated payment workflow for academic demonstration.
 
-## Technology Stack
+Supported payment options include:
 
-| Category | Technology |
-|---|---|
-| Backend Framework | Laravel 10 |
-| Programming Language | PHP 8.1+ |
-| Frontend | Blade Template, HTML, CSS |
-| UI Framework | Bootstrap 5 |
-| Database | MySQL |
-| Build Tool | Vite |
-| Package Management | Composer, NPM |
-| Version Control | Git & GitHub |
-| Local Development | XAMPP |
+- QRIS.
+- Bank transfer.
+- E-Wallet.
+- Cash.
+
+After customer confirmation, payment information enters a waiting-for-verification state.
+
+> No real payment gateway or real financial transaction is implemented in this project.
+
+### Booking Management
+
+Customers can access their own booking history.
+
+Administrators can:
+
+- Search bookings.
+- Filter payment status.
+- Filter booking status.
+- Filter treatment status.
+- Update booking information.
+- Verify payment status.
+
+### Payment Status Automation
+
+When an administrator marks a payment as `paid`:
+
+- A pending booking becomes `confirmed`.
+- A `not_started` treatment becomes `scheduled`.
+- Payment confirmation information is stored.
+- A receipt code can be generated.
+- Loyalty points are awarded.
+
+When payment becomes `failed` or `refunded`:
+
+- The booking becomes `cancelled`.
+- The treatment becomes `cancelled`.
+
+### Payment Receipt
+
+Customers can access a receipt for eligible paid bookings.
+
+Booking ownership is checked so that customers can only access their own booking information, while administrators can access administrative records.
+
+### Membership and Loyalty Points
+
+Customers can:
+
+- View their current membership level.
+- Monitor total active points.
+- View point transaction history.
+- Progress through membership levels.
+
+The implemented membership levels are:
+
+| Level | Minimum Active Points |
+|---|---:|
+| Bronze | 0 |
+| Silver | 500 |
+| Gold | 1,500 |
+| Platinum | 3,000 |
+
+Points generated from successful booking payments are calculated based on the booking value.
+
+### Promotions
+
+The system supports:
+
+- Public promotions.
+- Member-oriented promotions.
+- Promotion periods.
+- Minimum membership requirements.
+- Promotion status management.
+- Treatment relationships through a many-to-many relation.
+
+Administrators can create, update, and manage promotion information.
+
+> Promotions currently provide information and membership eligibility. Promotional discounts are not automatically applied to the booking total.
+
+### Reviews
+
+Customers can submit a booking review after the related treatment has reached the `completed` status.
+
+The system stores ratings and review comments associated with supported reviewable objects.
+
+### Administrative Dashboard
+
+The administrator interface provides access to system information and management features including:
+
+- Treatment management.
+- Booking management.
+- Payment verification.
+- Treatment status management.
+- Promotion management.
+- Customer and booking summaries.
 
 ---
 
@@ -266,41 +426,210 @@ Ratings are limited to a scale of **1–5**.
 Lumiere Beauty follows Laravel's **Model-View-Controller (MVC)** architecture.
 
 ```mermaid
-flowchart LR
-    A[User] --> B[Routes]
-    B --> C[Controller]
-    C --> D[Model]
-    D --> E[(MySQL Database)]
-    E --> D
-    D --> C
-    C --> F[Blade View]
-    F --> A
+flowchart TD
+    A["User Browser"] --> B["Routes"]
+    B --> C["Middleware: guest / auth / admin"]
+    C --> D["Controller"]
+
+    D --> E["Model / Service"]
+    E --> F[("MySQL Database")]
+    F --> E
+
+    D --> G["Blade Views"]
+    G --> H["Bootstrap + Custom CSS + JavaScript"]
+    H --> A
 ```
 
-### Architecture Components
+### Request Lifecycle
 
-- **Routes** handle incoming application requests.
-- **Controllers** manage application and business logic.
-- **Models** interact with application data.
-- **MySQL** stores user, treatment, booking, payment, promotion, point, and review information.
-- **Blade Views** provide the customer and administrator interfaces.
+A typical application request follows this process:
+
+```text
+Browser
+   ->
+Route
+   ->
+Middleware
+   ->
+Controller
+   ->
+Model / Service
+   ->
+MySQL Database
+   ->
+Controller
+   ->
+Blade View
+   ->
+Browser
+```
+
+This structure separates request handling, business logic, data management, and interface presentation.
+
+---
+
+## Technology Stack
+
+| Category | Technology |
+|---|---|
+| Backend Framework | Laravel 10.10+ |
+| Programming Language | PHP 8.1+ |
+| Frontend Template | Laravel Blade |
+| Frontend | HTML, CSS, JavaScript |
+| UI Framework | Bootstrap 5.3 |
+| Database | MySQL |
+| ORM | Laravel Eloquent |
+| Asset Build Tool | Vite 5 |
+| Package Management | Composer, NPM |
+| Local Development | XAMPP |
+| Version Control | Git & GitHub |
+| Hosting | DomaiNesia / cPanel |
+| Deployment | Production domain with HTTPS |
+
+---
+
+## Main Application Structure
+
+```text
+lumiere-beauty/
+|
+|-- app/
+|   |-- Http/
+|   |   |-- Controllers/
+|   |   |-- Middleware/
+|   |
+|   |-- Models/
+|   |-- Services/
+|
+|-- database/
+|   |-- migrations/
+|   |-- seeders/
+|
+|-- resources/
+|   |-- css/
+|   |-- js/
+|   |-- views/
+|
+|-- routes/
+|   |-- web.php
+|
+|-- public/
+|   |-- assets/
+|
+|-- storage/
+|
+|-- tests/
+|
+|-- composer.json
+|-- package.json
+|-- vite.config.js
+|-- README.md
+```
+
+---
+
+## Main Data Relationships
+
+The system uses several relational database patterns.
+
+| Relationship | Type |
+|---|---|
+| Membership Level to User | One-to-Many |
+| User to Booking | One-to-Many |
+| Treatment to Booking | One-to-Many |
+| Booking to Payment | One-to-One |
+| User to Point Transaction | One-to-Many |
+| Booking to Point Transaction | One-to-Many |
+| Promotion to Treatment | Many-to-Many |
+| User to Role | Many-to-Many |
+| Review to Reviewable Object | Polymorphic |
+
+---
+
+## Project Scope and Limitations
+
+This project was created as an academic Web Programming project and is presented according to its implemented scope.
+
+Current limitations include:
+
+- Payment processing is simulated and is not connected to a real payment gateway.
+- Promotional discounts are not automatically applied to booking prices.
+- Treatment booking does not yet include schedule collision or capacity validation.
+- Payment proof storage is prepared in the database but is not fully implemented in the current customer workflow.
+- Point expiration is calculated during synchronization and does not currently use a daily scheduler.
+- Point redemption is not yet implemented.
+- Contact information is currently static and does not include a contact-message database workflow.
+- Automated testing is still limited.
+
+These limitations provide potential areas for future system development.
 
 ---
 
 ## Screenshots
 
-Screenshots of the main customer and administrator workflows will be added after the project documentation is prepared.
+Screenshots will be added to document the main customer and administrator workflows.
 
 Planned documentation includes:
 
-- Homepage
-- Treatment Catalogue
-- Booking Process
-- Payment Process
-- My Bookings
-- Loyalty Points
-- Admin Dashboard
-- Booking Management
+1. Homepage
+2. Treatment Catalogue
+3. Treatment Booking
+4. Payment Process
+5. My Bookings
+6. Payment Receipt
+7. My Points and Membership
+8. Customer Profile
+9. Promotions
+10. Admin Dashboard
+11. Admin Booking Management
+
+The screenshots will later be stored under:
+
+```text
+docs/screenshots/
+```
+
+---
+
+## Live Deployment
+
+The project has been deployed to a production web hosting environment.
+
+**Live Website**
+
+https://lumierebeauty.web.id
+
+The deployment process includes:
+
+```text
+Laravel Project
+      |
+      v
+Production Configuration
+      |
+      v
+MySQL Hosting Database
+      |
+      v
+Vite Production Build
+      |
+      v
+cPanel / public_html
+      |
+      v
+Domain Configuration
+      |
+      v
+DNS
+      |
+      v
+SSL / HTTPS
+      |
+      v
+Live Website
+```
+
+Production-specific environment configuration is stored separately from the public repository.
 
 ---
 
@@ -308,15 +637,16 @@ Planned documentation includes:
 
 ### Requirements
 
-Make sure the following software is installed:
+Make sure the following software is available:
 
 - PHP 8.1 or later
 - Composer
 - MySQL
-- Node.js & NPM
+- Node.js
+- NPM
 - Git
 
-### 1. Clone the Repository
+### 1. Clone Repository
 
 ```bash
 git clone https://github.com/anggitasilmyy/lumiere-beauty.git
@@ -337,11 +667,17 @@ npm install
 
 ### 4. Create Environment File
 
+For Windows:
+
+```bash
+copy .env.example .env
+```
+
+For macOS or Linux:
+
 ```bash
 cp .env.example .env
 ```
-
-For Windows users, `.env.example` can also be manually duplicated and renamed to `.env`.
 
 ### 5. Generate Application Key
 
@@ -349,17 +685,22 @@ For Windows users, `.env.example` can also be manually duplicated and renamed to
 php artisan key:generate
 ```
 
-### 6. Configure the Database
+### 6. Configure Database
 
-Update the database configuration inside `.env`:
+Configure the local MySQL connection inside `.env`.
+
+Example:
 
 ```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
 DB_DATABASE=lumiere_beauty
 DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-Adjust the database username and password according to your local MySQL configuration.
+Adjust the values according to your local environment.
 
 ### 7. Run Database Migration
 
@@ -367,73 +708,108 @@ Adjust the database username and password according to your local MySQL configur
 php artisan migrate
 ```
 
-### 8. Run the Frontend Development Server
+Demo seeding instructions will be finalized after development administrator credentials are fully separated from production credentials.
+
+### 8. Create Storage Link
+
+```bash
+php artisan storage:link
+```
+
+### 9. Run Frontend Development Server
 
 ```bash
 npm run dev
 ```
 
-### 9. Run the Laravel Application
+For a production-style asset build:
 
-Open another terminal and run:
+```bash
+npm run build
+```
+
+### 10. Run Laravel Application
 
 ```bash
 php artisan serve
 ```
 
-The application will be available locally at:
+The local application will normally be available at:
 
 ```text
 http://127.0.0.1:8000
 ```
 
-> Database seeding instructions will be added after the demo administrator configuration is separated from production credentials.
-
 ---
 
-## Security & Demo Data
+## Security and Demo Data
 
-This repository is intended for **academic and portfolio purposes**.
+This repository is maintained for academic and portfolio purposes.
 
-- Production environment credentials should not be stored in this repository.
-- The `.env` file is excluded from version control.
-- Payment information included in the application is dummy data.
-- No real financial transactions are processed.
-- Demo administrator credentials must be separated from production administrator credentials.
+- Environment-specific configuration should be stored in `.env`.
+- `.env` should not be committed to the public repository.
+- Production database credentials should remain private.
+- Payment information used in the project is dummy data.
+- No real financial transaction is processed.
+- Development or demo administrator credentials should be separated from production administrator credentials.
+- Production environments should use `APP_ENV=production`.
+- Production environments should use `APP_DEBUG=false`.
 
 ---
 
 ## Academic Context
 
-This project was developed as part of a **Web Programming course project** in the Information Systems program at **Universitas Esa Unggul**.
+Lumiere Beauty was developed as a group final project for the **Web Programming** course in the Information Systems program at **Universitas Esa Unggul**.
 
 The project applies concepts including:
 
-`Laravel MVC` · `Routing` · `Authentication` · `CRUD Operations` · `Database Integration` · `Role-Based Access` · `Booking Workflow` · `Payment Workflow`
+```text
+Laravel MVC
+Routing
+Middleware
+Authentication
+Role-Based Access
+Blade Templates
+CRUD Operations
+Validation
+Eloquent ORM
+Database Relationships
+Database Transactions
+Session Management
+Bootstrap
+Responsive Web Design
+Vite
+Web Hosting and Deployment
+```
 
-The main objective of the project is to demonstrate the implementation of a complete web-based information system that integrates customer-facing functionality with administrative management.
+The project demonstrates an end-to-end implementation of a web-based information system from customer-facing functionality to administrative management and production deployment.
 
 ---
 
-## 👩🏻‍💻 Project Team
+## Project Team and Contributions
 
-This project was developed as a group academic project by:
+Lumiere Beauty was developed collaboratively as a group academic project.
 
-- **Silmy Kaffa Anggita**
-- **Angellica Ivana**
-- **Neng Audy Agustin**
-- **Stefanie Sentana**
-- **Nova Selvia**
+| Team Member | Primary Contribution |
+|---|---|
+| **Silmy Kaffa Anggita** | **Home Page, Interface Integration, Hosting & Deployment** |
+| Neng Audy Agustin | Treatments, Treatment Booking & Booking Flow |
+| Angellica Ivana | Membership, Loyalty Points, Profile & Membership Levels |
+| Stefanie Sentana | Promotions & Promotion Management |
+| Nova Selvia | Contact & Clinic Information |
+
+Several cross-functional components were integrated collaboratively across the project, including authentication, administrative functionality, simulated payment, receipts, reviews, and project documentation.
 
 ---
 
 ## Repository Owner
 
-### Silmy Kaffa Anggita
+**Silmy Kaffa Anggita**
 
-Information Systems Student — Universitas Esa Unggul
+Information Systems Student  
+Universitas Esa Unggul
 
-[LinkedIn](https://www.linkedin.com/in/silmy-kaffa-anggita-1347a6322) · [GitHub](https://github.com/anggitasilmyy)
+[LinkedIn](https://www.linkedin.com/in/silmy-kaffa-anggita-1347a6322) | [GitHub](https://github.com/anggitasilmyy)
 
 ---
 
@@ -443,6 +819,6 @@ Information Systems Student — Universitas Esa Unggul
 
 **Beauty Treatment Booking & Management System**
 
-*Academic Web Programming Project*
+Academic Web Programming Project
 
 </div>
