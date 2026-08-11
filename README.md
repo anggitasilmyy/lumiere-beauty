@@ -54,6 +54,35 @@ The project aims to:
 
 ---
 
+## My Contribution
+
+My primary responsibility in this project was the **Home Page and visual integration across the application**.
+
+I worked on integrating the main public-facing interface with other system modules so that the homepage served not only as an introduction to Lumiere Beauty, but also as a navigation and information hub for treatments, promotions, membership, authentication states, and other customer features.
+
+### Main Responsibilities
+
+- Developed and refined the main **Home Page** interface.
+- Integrated featured treatment data from the database into the homepage.
+- Integrated active promotion data into the homepage.
+- Adjusted navigation based on authentication and user roles.
+- Integrated reusable layout components such as the navbar and footer.
+- Maintained visual consistency across pages through shared styling.
+- Implemented and adjusted responsive navigation for desktop and mobile layouts.
+- Integrated Bootstrap, custom CSS, JavaScript, and Vite assets into the main layout.
+- Contributed to overall interface integration between public, customer, and administrative features.
+
+### Main Files
+
+```text
+app/Http/Controllers/HomeController.php
+resources/views/home.blade.php
+resources/views/layouts/app.blade.php
+resources/views/partials/navbar.blade.php
+resources/views/partials/footer.blade.php
+public/assets/css/styles.css
+public/assets/js/script.js
+
 ## User Roles
 
 ### Customer
