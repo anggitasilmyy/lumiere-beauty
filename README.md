@@ -1,6 +1,6 @@
 <div align="center">
 
-# ✨ Lumiere Beauty
+# Lumiere Beauty
 
 ### Beauty Treatment Booking & Management System
 
@@ -19,7 +19,7 @@ reviews, and administrative management.
 
 ---
 
-## 📖 Overview
+## Overview
 
 **Lumiere Beauty** is a web-based beauty treatment booking and management system developed as an academic project for the **Web Programming** course.
 
@@ -29,7 +29,7 @@ The system also provides an administrative interface for managing treatments, pr
 
 ---
 
-## 💡 Problem Background
+## Problem Background
 
 Beauty service businesses need an organized process for managing treatment information, reservations, schedules, promotions, and transaction records.
 
@@ -39,7 +39,7 @@ Lumiere Beauty was designed to demonstrate how a web-based information system ca
 
 ---
 
-## 🎯 Project Objectives
+## Project Objectives
 
 The main objectives of this project are to:
 
@@ -52,7 +52,7 @@ The main objectives of this project are to:
 
 ---
 
-## 👥 User Roles
+## User Roles
 
 ### Customer
 
@@ -82,7 +82,7 @@ Administrators can:
 
 ---
 
-## 🔄 Core Business Flow
+## Core Business Flow
 
 ```text
 Customer
@@ -152,7 +152,7 @@ Admin Dashboard
 
 Provides administrative access for managing treatments, bookings, and promotions.
 
-🛠️ Technology Stack
+Technology Stack
 Category	Technology
 Backend	Laravel 10, PHP
 Frontend	Blade Template, HTML, CSS
@@ -161,7 +161,8 @@ Database	MySQL
 Build Tool	Vite
 Version Control	Git & GitHub
 Local Development	XAMPP
-🏗️ System Architecture
+
+System Architecture
 
 Lumiere Beauty follows Laravel's MVC (Model-View-Controller) architecture.
 
@@ -189,12 +190,11 @@ User Interface
 
 This separation helps organize application logic, data management, and presentation components.
 
-📸 Screenshots
+Screenshots
 
 Project screenshots will be presented here to demonstrate the main customer and administrative workflows.
 
-<!-- Screenshots will be added after documentation preparation -->
-🚀 Local Installation
+Local Installation
 Requirements
 
 Make sure the following software is available:
@@ -238,6 +238,7 @@ php artisan serve
 Open:
 
 http://127.0.0.1:8000
+
 🔐 Security & Demo Data
 
 This repository is intended for academic and portfolio purposes.
@@ -248,7 +249,7 @@ Payment information contained in this project is dummy data used solely to demon
 
 Any administrator account generated through database seeders is intended only for local development and demonstration purposes and must not be used as a production credential.
 
-🎓 Academic Context
+Academic Context
 
 This project was developed as part of a Web Programming course project to apply concepts including:
 
@@ -266,13 +267,18 @@ Lumiere Beauty
 👩🏻‍💻 Developer
 
 Silmy Kaffa Anggita
+Angellica Ivana
+Neng Audy Agustin
+Stefanie Sentana
+Nova Selvia
+
 Information Systems Student — Universitas Esa Unggul
 
 LinkedIn ·
 GitHub
 
 <div align="center">
-✨ Lumiere Beauty
+Lumiere Beauty
 
 Academic Web Programming Project
 
