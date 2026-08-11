@@ -567,29 +567,71 @@ These limitations provide potential areas for future system development.
 
 ## Screenshots
 
-Screenshots will be added to document the main customer and administrator workflows.
+The following screenshots demonstrate the main customer and administrative workflows implemented in Lumiere Beauty.
 
-Planned documentation includes:
+### Home Page
 
-1. Homepage
-2. Treatment Catalogue
-3. Treatment Booking
-4. Payment Process
-5. My Bookings
-6. Payment Receipt
-7. My Points and Membership
-8. Customer Profile
-9. Promotions
-10. Admin Dashboard
-11. Admin Booking Management
+The homepage serves as the main entry point to the system and integrates navigation, treatment highlights, promotions, membership information, and authentication-aware actions.
 
-The screenshots will later be stored under:
+<p align="center">
+  <img src="docs/screenshots/01-homepage.png" width="900" alt="Lumiere Beauty Homepage">
+</p>
 
-```text
-docs/screenshots/
-```
+### Treatment Catalogue
 
----
+Customers can browse available treatments, view treatment information, search or filter services, and select a treatment for booking.
+
+<p align="center">
+  <img src="docs/screenshots/02-treatments.png" width="900" alt="Treatment Catalogue">
+</p>
+
+### Treatment Booking
+
+After selecting a treatment, authenticated customers can choose their booking date, time, payment method, and provide additional booking information.
+
+<p align="center">
+  <img src="docs/screenshots/03-booking.png" width="900" alt="Treatment Booking">
+</p>
+
+### Simulated Payment
+
+The payment page displays treatment details, booking information, total payment, and payment instructions according to the selected payment method.
+
+<p align="center">
+  <img src="docs/screenshots/04-payment.png" width="900" alt="Simulated Payment">
+</p>
+
+### My Bookings
+
+Customers can monitor their reservation history and view payment, booking, and treatment statuses.
+
+<p align="center">
+  <img src="docs/screenshots/05-my-bookings.png" width="900" alt="Customer Booking History">
+</p>
+
+### Membership and Loyalty Points
+
+The membership feature displays the customer's current membership level, accumulated points, and progression toward the next membership benefit.
+
+<p align="center">
+  <img src="docs/screenshots/06-membership-points.png" width="900" alt="Membership and Loyalty Points">
+</p>
+
+### Admin Dashboard
+
+The administrative dashboard provides an overview of treatments, customers, bookings, payments, and other system information.
+
+<p align="center">
+  <img src="docs/screenshots/07-admin-dashboard.png" width="900" alt="Admin Dashboard">
+</p>
+
+### Booking Management
+
+Administrators can search and filter bookings, review payment statuses, and update payment, booking, and treatment statuses.
+
+<p align="center">
+  <img src="docs/screenshots/08-admin-booking-management.png" width="900" alt="Admin Booking Management">
+</p>
 
 ## Live Deployment
 
