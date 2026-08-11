@@ -120,47 +120,61 @@ Administrators can:
 
 ## Core Business Flow
 
-```mermaid
-flowchart TD
-    A[Customer browses treatments and promotions] --> B{Logged in?}
+The main workflow connects the customer booking process with administrative verification and subsequent customer services.
 
-    B -- No --> C[Register or Login]
-    B -- Yes --> D[Select Treatment]
-    C --> D
-
-    D --> E[Choose Booking Date and Time]
-    E --> F[Apply Promotion Code if Available]
-    F --> G[Select Payment Method]
-    G --> H[Submit Booking and Payment Information]
-
-    H --> I[System Creates Pending Booking]
-    I --> J[Payment Status: Waiting Verification]
-
-    J --> K[Admin Reviews Booking and Payment]
-
-    K --> L{Payment Verification}
-
-    L -- Paid --> M[Booking Confirmed]
-    M --> N[Treatment Scheduled]
-    N --> O[Loyalty Points Awarded]
-    O --> P[Customer Views Booking and Receipt]
-    P --> Q[Treatment Completed]
-    Q --> R[Customer Can Submit Review]
-
-    L -- Failed / Refunded --> S[Booking Cancelled]
+```text
+Guest / Customer
+       │
+       ▼
+Browse Treatments & Promotions
+       │
+       ▼
+Register / Login
+       │
+       ▼
+Select Treatment
+       │
+       ▼
+Choose Date, Time & Payment Method
+       │
+       ▼
+Payment Simulation
+       │
+       ▼
+Booking Created
+waiting_verification
+       │
+       ▼
+Admin Verifies Payment
+       │
+       ├──────── Payment Failed / Refunded
+       │                  │
+       │                  ▼
+       │           Booking Cancelled
+       │
+       ▼
+Payment Paid
+       │
+       ▼
+Booking Confirmed
+       │
+       ▼
+Treatment Scheduled
+       │
+       ▼
+Loyalty Points Awarded
+       │
+       ▼
+My Bookings / Receipt / My Points
+       │
+       ▼
+Treatment Completed
+       │
+       ▼
+Customer Review
 ```
 
-### Flow Summary
-
-1. The customer browses available treatments and promotions.
-2. The customer logs in or creates an account before booking.
-3. The customer selects a treatment, date, time, promotion, and payment method.
-4. The system stores the booking with a **pending** status and the payment as **waiting for verification**.
-5. The administrator reviews the booking and payment information.
-6. When payment is marked as **paid**, the booking is automatically confirmed and the treatment is scheduled.
-7. The customer receives loyalty points after successful payment verification.
-8. After the treatment is completed, the customer can submit a review.
-9. Failed or refunded payments result in cancellation of the booking.
+The administrator supports this workflow by managing treatments and promotions, monitoring bookings, verifying simulated payments, and updating booking and treatment statuses.
 
 ---
 
