@@ -601,12 +601,12 @@ After selecting a treatment, authenticated customers can choose their booking da
   <img src="docs/screenshots/03-booking.png" width="900" alt="Treatment Booking">
 </p>
 
-### Simulated Payment
+### Simulated Payment and Promotion
 
-The payment page displays treatment details, booking information, total payment, and payment instructions according to the selected payment method.
+The checkout workflow displays the original treatment price, applied promotion, discount amount, and final payment total before the customer submits the simulated payment confirmation.
 
 <p align="center">
-  <img src="docs/screenshots/04-payment.png" width="900" alt="Simulated Payment">
+  <img src="docs/screenshots/04-payment.png" width="900" alt="Simulated Payment with Promotion">
 </p>
 
 ### My Bookings
