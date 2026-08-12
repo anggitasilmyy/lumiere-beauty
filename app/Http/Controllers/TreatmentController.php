@@ -40,13 +40,15 @@ class TreatmentController extends Controller
                 ->find($request->selected);
         }
 
+        $promoCode = strtoupper(trim((string) $request->query('promo', '')));
         $paymentMethods = $paymentChannelService->labels();
 
         return view('treatments.index', compact(
             'treatments',
             'categories',
             'selectedTreatment',
-            'paymentMethods'
+            'paymentMethods',
+            'promoCode'
         ));
     }
 }

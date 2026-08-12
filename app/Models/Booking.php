@@ -13,9 +13,14 @@ class Booking extends Model
         'booking_code',
         'user_id',
         'treatment_id',
+        'promotion_id',
+        'promo_code',
         'booking_date',
         'booking_time',
         'notes',
+        'original_price',
+        'discount_percent',
+        'discount_amount',
         'total_price',
         'payment_status',
         'booking_status',
@@ -23,7 +28,13 @@ class Booking extends Model
     ];
 
     protected $casts = [
+        'user_id' => 'integer',
+        'treatment_id' => 'integer',
+        'promotion_id' => 'integer',
         'booking_date' => 'date',
+        'original_price' => 'decimal:2',
+        'discount_percent' => 'decimal:2',
+        'discount_amount' => 'decimal:2',
         'total_price' => 'decimal:2',
     ];
 
@@ -35,6 +46,11 @@ class Booking extends Model
     public function treatment()
     {
         return $this->belongsTo(Treatment::class);
+    }
+
+    public function promotion()
+    {
+        return $this->belongsTo(Promotion::class);
     }
 
     public function payment()

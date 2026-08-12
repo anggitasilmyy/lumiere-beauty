@@ -10,7 +10,14 @@ class PromotionController extends Controller
     {
         $user = auth()->user();
 
-        $promotions = Promotion::with('minimumMembershipLevel')
+        if ($user) {
+            $user->loadMissing('membershipLevel');
+        }
+
+        $promotions = Promotion::with([
+            'minimumMembershipLevel',
+            'treatments',
+        ])
             ->where('is_active', true)
             ->where(function ($query) {
                 $query->whereNull('start_date')
@@ -21,7 +28,8 @@ class PromotionController extends Controller
                     ->orWhere('end_date', '>=', now()->toDateString());
             })
             ->latest()
-            ->paginate(9);
+            ->paginate(9)
+            ->withQueryString();
 
         return view('promotions.index', compact('promotions', 'user'));
     }

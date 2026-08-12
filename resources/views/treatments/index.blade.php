@@ -17,12 +17,18 @@
 
     <section class="section-block">
         <div class="container">
-            <form action="{{ route('treatments.index') }}"
-                  method="GET"
-                  class="filter-panel reveal">
+            <form
+                action="{{ route('treatments.index') }}"
+                method="GET"
+                class="filter-panel reveal"
+            >
 
                 @if(filled($promoCode))
-                    <input type="hidden" name="promo" value="{{ $promoCode }}">
+                    <input
+                        type="hidden"
+                        name="promo"
+                        value="{{ $promoCode }}"
+                    >
                 @endif
 
                 <div class="filter-group mb-3">
@@ -45,11 +51,14 @@
                         Kategori
                     </label>
 
-                    <select id="category"
-                            name="category"
-                            class="form-select">
-
-                        <option value="">Semua Kategori</option>
+                    <select
+                        id="category"
+                        name="category"
+                        class="form-select"
+                    >
+                        <option value="">
+                            Semua Kategori
+                        </option>
 
                         @foreach($categories as $category)
                             <option
@@ -65,7 +74,10 @@
                 </div>
 
                 <div class="filter-actions">
-                    <button type="submit" class="btn btn-primary">
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                    >
                         Filter
                     </button>
 
@@ -108,9 +120,13 @@
                             </div>
                         @endif
 
-                        <h3>{{ $treatment->treatment_name }}</h3>
+                        <h3>
+                            {{ $treatment->treatment_name }}
+                        </h3>
 
-                        <p>{{ $treatment->short_description }}</p>
+                        <p>
+                            {{ $treatment->short_description }}
+                        </p>
 
                         <ul class="mb-3">
                             <li>
@@ -147,13 +163,16 @@
                             Pilih Treatment
                         </a>
                     </article>
+
                 @empty
                     <article class="treatment-card reveal">
                         <div class="treatment-badge">
                             Treatment
                         </div>
 
-                        <h3>Data treatment belum tersedia</h3>
+                        <h3>
+                            Data treatment belum tersedia
+                        </h3>
 
                         <p>
                             Tidak ada treatment yang sesuai dengan filter.
@@ -168,17 +187,21 @@
         </div>
     </section>
 
-    <section class="section-block booking-section"
-             id="booking-form">
-
+    <section
+        class="section-block booking-section"
+        id="booking-form"
+    >
         <div class="container">
             <div class="booking-layout">
+
                 <div class="section-heading reveal">
                     <span class="eyebrow eyebrow-dark">
                         Online Reservation
                     </span>
 
-                    <h2>Booking Treatment</h2>
+                    <h2>
+                        Booking Treatment
+                    </h2>
 
                     <p>
                         Setelah memilih treatment, isi tanggal, jam,
@@ -187,8 +210,11 @@
                 </div>
 
                 <div class="booking-card reveal">
+
                     @auth
+
                         @if($selectedTreatment)
+
                             <div class="selected-treatment-box">
                                 <span class="promo-tag">
                                     Selected Treatment
@@ -227,6 +253,7 @@
                                 >
 
                                 <div class="form-grid">
+
                                     <div class="form-group mb-3">
                                         <label
                                             for="booking_date"
@@ -249,7 +276,9 @@
                                         >
 
                                         @error('booking_date')
-                                            <small class="form-error invalid-feedback d-block">
+                                            <small
+                                                class="form-error invalid-feedback d-block"
+                                            >
                                                 {{ $message }}
                                             </small>
                                         @enderror
@@ -280,14 +309,19 @@
                                                 @php
                                                     $time = sprintf(
                                                         '%02d:%02d',
-                                                        intdiv($minutes, 60),
+                                                        intdiv(
+                                                            $minutes,
+                                                            60
+                                                        ),
                                                         $minutes % 60
                                                     );
                                                 @endphp
 
                                                 <option
                                                     value="{{ $time }}"
-                                                    {{ old('booking_time') === $time
+                                                    {{ old(
+                                                        'booking_time'
+                                                    ) === $time
                                                         ? 'selected'
                                                         : '' }}
                                                 >
@@ -301,11 +335,14 @@
                                         </select>
 
                                         @error('booking_time')
-                                            <small class="form-error invalid-feedback d-block">
+                                            <small
+                                                class="form-error invalid-feedback d-block"
+                                            >
                                                 {{ $message }}
                                             </small>
                                         @enderror
                                     </div>
+
                                 </div>
 
                                 <div class="form-group mb-3">
@@ -329,10 +366,15 @@
                                             Pilih metode pembayaran
                                         </option>
 
-                                        @foreach($paymentMethods as $method => $label)
+                                        @foreach(
+                                            $paymentMethods
+                                            as $method => $label
+                                        )
                                             <option
                                                 value="{{ $method }}"
-                                                {{ old('payment_method') === $method
+                                                {{ old(
+                                                    'payment_method'
+                                                ) === $method
                                                     ? 'selected'
                                                     : '' }}
                                             >
@@ -342,7 +384,9 @@
                                     </select>
 
                                     @error('payment_method')
-                                        <small class="form-error invalid-feedback d-block">
+                                        <small
+                                            class="form-error invalid-feedback d-block"
+                                        >
                                             {{ $message }}
                                         </small>
                                     @enderror
@@ -360,10 +404,9 @@
                                         type="text"
                                         id="promo_code"
                                         name="promo_code"
-                                        value="{{ old(
-                                            'promo_code',
-                                            $promoCode
-                                        ) }}"
+                                        value="{{ filled($promoCode)
+                                            ? $promoCode
+                                            : old('promo_code', '') }}"
                                         class="form-control text-uppercase
                                             @error('promo_code')
                                                 is-invalid
@@ -378,7 +421,9 @@
                                     </small>
 
                                     @error('promo_code')
-                                        <small class="form-error invalid-feedback d-block">
+                                        <small
+                                            class="form-error invalid-feedback d-block"
+                                        >
                                             {{ $message }}
                                         </small>
                                     @enderror
@@ -404,7 +449,9 @@
                                     >{{ old('notes') }}</textarea>
 
                                     @error('notes')
-                                        <small class="form-error invalid-feedback d-block">
+                                        <small
+                                            class="form-error invalid-feedback d-block"
+                                        >
                                             {{ $message }}
                                         </small>
                                     @enderror
@@ -417,19 +464,28 @@
                                     Lanjut Pembayaran
                                 </button>
                             </form>
+
                         @else
+
                             <div class="empty-state">
-                                <h3>Belum ada treatment dipilih</h3>
+                                <h3>
+                                    Belum ada treatment dipilih
+                                </h3>
 
                                 <p>
                                     Silakan pilih salah satu treatment
                                     terlebih dahulu.
                                 </p>
                             </div>
+
                         @endif
+
                     @else
+
                         <div class="empty-state">
-                            <h3>Login diperlukan</h3>
+                            <h3>
+                                Login diperlukan
+                            </h3>
 
                             <p>
                                 Silakan login terlebih dahulu untuk
@@ -443,7 +499,9 @@
                                 Login
                             </a>
                         </div>
+
                     @endauth
+
                 </div>
             </div>
         </div>
