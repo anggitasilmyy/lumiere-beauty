@@ -266,17 +266,18 @@ flowchart TD
 
 1. A user begins by exploring available treatments and promotions.
 2. Authentication is required before creating a booking.
-3. The customer selects a treatment, booking date, booking time, and payment method.
-4. The checkout process temporarily stores the booking information before confirmation.
-5. After simulated payment confirmation is submitted, the system creates the booking and payment records.
-6. The booking begins with a `pending` status and the payment enters `waiting_verification`.
-7. An administrator reviews the payment information.
-8. When the payment is changed to `paid`, the booking is automatically confirmed.
-9. The treatment status is automatically changed from `not_started` to `scheduled`.
-10. Loyalty points are awarded to the customer.
-11. The customer can access booking information, receipt, and loyalty point history.
-12. After the treatment status becomes `completed`, the customer can submit a review.
-13. If payment is marked as `failed` or `refunded`, the booking and treatment are cancelled.
+3. The customer selects a treatment, booking date, booking time, payment method, and an optional promotion code.
+4. If a promotion code is provided, the system validates its activation status, validity period, treatment eligibility, and membership requirements.
+5. For an eligible promotion, the system calculates the discount and final booking price before displaying payment instructions.
+6. After simulated payment confirmation is submitted, the system creates the booking and payment records.
+7. The booking begins with a `pending` status and the payment enters `waiting_verification`.
+8. An administrator reviews the payment information.
+9. When the payment is changed to `paid`, the booking is automatically confirmed.
+10. The treatment status is automatically changed from `not_started` to `scheduled`.
+11. Loyalty points are awarded to the customer.
+12. The customer can access booking information, receipt, and loyalty point history.
+13. After the treatment status becomes `completed`, the customer can submit a review.
+14. If payment is marked as `failed` or `refunded`, the booking and treatment are cancelled.
 
 ---
 
