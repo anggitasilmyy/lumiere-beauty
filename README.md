@@ -241,24 +241,25 @@ flowchart TD
     B -- "Yes" --> D["Select Treatment"]
     C --> D
 
-    D --> E["Choose Booking Date, Time, and Payment Method"]
-    E --> F["Checkout and Payment Instructions"]
-    F --> G["Submit Simulated Payment Confirmation"]
+    D --> E["Choose Booking Date, Time, Payment Method, and Promotion"]
+    E --> F["Validate Promotion and Calculate Final Price"]
+    F --> G["Checkout and Payment Instructions"]
+    G --> H["Submit Simulated Payment Confirmation"]
 
-    G --> H["Booking Created: Pending"]
-    H --> I["Payment Status: Waiting Verification"]
+    H --> I["Booking Created: Pending"]
+    I --> J["Payment Status: Waiting Verification"]
 
-    I --> J["Admin Reviews Payment"]
-    J --> K{"Payment Status"}
+    J --> K["Admin Reviews Payment"]
+    K --> L{"Payment Status"}
 
-    K -- "Paid" --> L["Booking Confirmed"]
-    L --> M["Treatment Scheduled"]
-    M --> N["Loyalty Points Awarded"]
-    N --> O["View My Bookings, Receipt, and Points"]
-    O --> P["Treatment Completed"]
-    P --> Q["Customer Can Submit Review"]
+    L -- "Paid" --> M["Booking Confirmed"]
+    M --> N["Treatment Scheduled"]
+    N --> O["Loyalty Points Awarded"]
+    O --> P["View My Bookings, Receipt, and Points"]
+    P --> Q["Treatment Completed"]
+    Q --> R["Customer Can Submit Review"]
 
-    K -- "Failed or Refunded" --> R["Booking and Treatment Cancelled"]
+    L -- "Failed or Refunded" --> S["Booking and Treatment Cancelled"]
 ```
 
 ### Flow Explanation
@@ -329,7 +330,9 @@ Supported payment options include:
 - E-Wallet.
 - Cash.
 
-After customer confirmation, payment information enters a waiting-for-verification state.
+Before payment instructions are displayed, the system calculates the final booking amount based on the selected treatment and any eligible promotion.
+
+After customer confirmation, the payment enters a `waiting_verification` state and must be reviewed by an administrator.
 
 > No real payment gateway or real financial transaction is implemented in this project.
 
