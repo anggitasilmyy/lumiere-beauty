@@ -389,18 +389,24 @@ Points generated from successful booking payments are calculated based on the bo
 
 ### Promotions
 
-The system supports:
+The system supports both public and membership-based promotional programs.
 
-- Public promotions.
-- Member-oriented promotions.
-- Promotion periods.
-- Minimum membership requirements.
-- Promotion status management.
-- Treatment relationships through a many-to-many relation.
+Customers can:
 
-Administrators can create, update, and manage promotion information.
+- View currently active promotions.
+- Check available promo codes and discount percentages.
+- Identify membership requirements for member-exclusive promotions.
+- Apply eligible promotion codes during treatment booking.
+- Automatically receive the corresponding discount during checkout.
 
-> Promotions currently provide information and membership eligibility. Promotional discounts are not automatically applied to the booking total.
+The promotion workflow validates:
+
+- Promotion activation status.
+- Promotion validity period.
+- Treatment eligibility.
+- Customer membership eligibility.
+
+When a valid promotion is applied, the system stores the promotion information, original treatment price, discount percentage, discount amount, and final booking total.
 
 ### Reviews
 
@@ -553,7 +559,6 @@ This project was created as an academic Web Programming project and is presented
 Current limitations include:
 
 - Payment processing is simulated and is not connected to a real payment gateway.
-- Promotional discounts are not automatically applied to booking prices.
 - Treatment booking does not yet include schedule collision or capacity validation.
 - Payment proof storage is prepared in the database but is not fully implemented in the current customer workflow.
 - Point expiration is calculated during synchronization and does not currently use a daily scheduler.
